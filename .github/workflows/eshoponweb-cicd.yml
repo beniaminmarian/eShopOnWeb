@@ -5,11 +5,11 @@ on: workflow_dispatch
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-eastus
-  LOCATION: westeurope
+  RESOURCE-GROUP: rg-eshoponweb-devops
+  LOCATION: eastus
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: a58997ff-791e-4a77-acc0-99b560c8cc88
-  WEBAPP-NAME: devops-webapp-eastus-1332711209
+  WEBAPP-NAME: devops-webapp-eastus-trainingcore
 
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@v4
     #prepare runner for desired .net version SDK
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v4  
       with:
         dotnet-version: '8.0.x'
         dotnet-quality: 'preview'
